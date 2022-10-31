@@ -1,0 +1,9 @@
+body {background-color:#DBF9FC}
+
+.mainDiv {margin: auto;
+text-align: left;}
+
+
+.item  {display: inline-block;}
+
+.itemCheck {display: inline-block;}

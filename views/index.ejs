@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <h1>To-do list</h1>
+      <form class="" action="/" method="post">
+        <ul class="ul">
+          <h2><%=today%></h2>
+          <%for (var i=0; i<toDoItems.length;i++) {%>
+          <input type="checkbox" name="" value="" class="itemCheck">
+          <li class='item'><%=toDoItems[i]%></li>
+          <br>
+          <%}%>
+        </ul>
+        <input type="text" name="toDoInput" placeholder="Add something here">
+        <input type="submit" name="submit" value="Add to the list">
+      </form>
+    </div>
+
+  </body>
+</html>
