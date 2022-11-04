@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const https = require('https');
 const mongoose = require('mongoose')
-
-mongoose.connect("mongodb://localhost:27017/todoList")
+const pp = encodeURIComponent("KpzxlEtnT8wlscCN");
+mongoose.connect("mongodb+srv://amohajerani6:KpzxlEtnT8wlscCN@cluster0.piaytyc.mongodb.net/hoom")
 
 mongoModel = mongoose.model('toDo', {
   'item': String
