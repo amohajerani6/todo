@@ -64,7 +64,9 @@ app.get('/', function(req, res) {
 
 app.get('/list', function(req, res) {
   if (req.isAuthenticated()) {
-    mongoList.find({username:req.user.username},
+    mongoList.find({
+        username: req.user.username
+      },
       function(err, results) {
         if (results) {
           var items = results
@@ -76,8 +78,9 @@ app.get('/list', function(req, res) {
           toDoItems: items
         })
       })
+  } else {
+    res.redirect('/login')
   }
-  else {res.redirect('/login')}
 })
 
 
@@ -133,11 +136,23 @@ app.get('/logout', function(req, res, next) {
 
 app.post('/list', function(req, res) {
   newItem = new mongoList({
-    username:req.user.username,
+    username: req.user.username,
     item: req.body.toDoInput
   })
   newItem.save()
   res.redirect('/list')
 })
+
+app.post('/delete', function(req, res) {
+  var id = req.body.checkbox;
+  mongoList.findByIdAndRemove(id, function(err) {
+    if (err) {console.log(err)}
+    else {console.log('successfully deleted task')
+      res.redirect('/list')}
+  });
+
+})
+
+
 
 app.listen(process.env.PORT || 3000, console.log('listening'))

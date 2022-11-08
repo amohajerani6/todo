@@ -22,3 +22,9 @@ body {
   color: #fff;
   background-color: #000;
 }
+
+.checkBox {
+  display: inline;
+}
+
+.parag {display:inline;}
