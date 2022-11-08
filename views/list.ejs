@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <h1>To-do list</h1>
+      <form class="" action="/list" method="post">
+        <ul class="ul">
+          <h2><%=today%></h2>
+          <%for (var i=0; i<toDoItems.length;i++) {%>
+          <input type="checkbox" name="" value="" class="itemCheck">
+          <li class='item'><%=toDoItems[i].item%></li>
+          <br>
+          <%}%>
+        </ul>
+        <input type="text" name="toDoInput" placeholder="Add something here">
+        <input type="submit" name="submit" value="Add to the list">
+      </form>
+    </div>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+
+  </body>
+</html>
